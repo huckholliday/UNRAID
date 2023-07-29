@@ -1,5 +1,6 @@
 #!/bin/bash
 # Backup of Raspberry Pi systems as img files remotely from UNRAID, compresses img files and does cleanup of older backups.
+# You will need the Discord.sh script saved on your UNRAID server https://github.com/fieu/discord.sh
 
 # Declare vars and set standard value
 backup_path=/mnt/user/Backups/Pi # Update to be the path on your UNRAID Sever
@@ -32,5 +33,4 @@ done
 find $backup_path/*.tgz -mtime +$retention_days -type f -delete
 
 # Discord notification when completed.
-# https://github.com/fieu/discord.sh
 bash /mnt/user/Backups/Scripts/discord.sh --webhook-url="ADD-DISCORD-WEBHOOK-URL-HERE" --username "Pi Backup" --title "Pi Backups Complete" --description "The backup of all Pi hosts has completed." --timestamp
