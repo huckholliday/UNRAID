@@ -23,13 +23,13 @@ echo
 #find $dest2 -mtime +14 -exec rm {} \;
 
 rsync -auhv --exclude 'Plex-Media-Server' /mnt/user/appdata/* $dest
-echo "appdata folder backup excluding PMS and InfluxDB complete"
+echo "appdata folder backup excluding Plex-Media-Server complete"
 echo
 date
 sleep 3
 
 rsync -auhv --exclude 'Library/Application Support/Plex Media Server/Cache' /mnt/user/appdata/Plex-Media-Server $dest
-echo "Plex backup complete"
+echo "Plex-Media-Server backup complete"
 echo
 date
 sleep 3
